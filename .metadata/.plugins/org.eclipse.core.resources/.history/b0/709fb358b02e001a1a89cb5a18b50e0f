@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style>
+            * { text-align: center; background: skyblue; }
+            a { text-decoration: none; }
+            li { list-style: none; }
+
+            nav {
+            	background: white;
+                float: right;
+            }
+            nav > li {
+                display: inline-block;
+                width: 100px;
+                height: 30px;
+                line-height: 30px;
+                background-color: skyblue;
+                border-radius: 3px;
+                box-shadow: 2px 2px gray;
+                font-size: 14px;
+                margin-bottom: 20px;
+            }
+            nav > li > a {
+                color: dodgerblue;
+                font-weight: bold;
+            }
+
+            section {
+                clear: right;
+                border-top: 7px solid Gainsboro;
+                border-bottom: 7px solid Gainsboro;
+                padding-bottom: 30px;
+                margin-bottom: 20px;
+            }
+            section > div {
+                font-size: 13px;
+            }
+            section > div:nth-of-type(3), section > div:nth-of-type(4) {
+                font-size: 1.3em;
+                display: inline-block;
+                width: 120px;
+                height: 120px;
+                line-height: 120px;
+                background-color: skyblue;
+                border-radius: 3px;
+                box-shadow: 3px 3px gray;
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
+            section a {
+                color: white;
+            }
+
+            footer > div > a {
+                color: gray;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <li>                
+                    <a href="index.html">홈</a>
+                </li>
+                <li>
+                    <a href="aboutme.html">자기소개</a>
+                </li>
+                <li>
+                    <a href="photo.html">내사진</a>
+                </li>
+                <li>
+                    <a href="today">몇시에요?</a>
+                </li>
+            </nav>
+        </header>
+        <section>
+            <h2>웹프론트엔드 개발자~! Jehyeok</h2>
+            <div>함께 개발하고 같이 성장하고 싶어요</div>
+            <div>서울특별시 광진구 화양동 어딘가 살고 있어요!</div>
+            <div class="introduceMe"><a href="aboutme.html">자기소개</a></div>
+            <div class="myPhoto"><a href="photo.html">내사진</a></div>
+            <div>
+                <img src="myHouse.png" />
+            </div>
+        </section>
+        <footer>
+            <div><a href="addrforme@gmail.com">addrforme@gmail.com</a></div>
+            <div><a href="https://github.com/Yun-Jehyeok">https://github.com/Yun-Jehyeok</a></div>
+        </footer>
+    </body>
+</html>
