@@ -1,0 +1,95 @@
+a { text-decoration: none; }
+li { list-style: none; }
+body { text-align: center; background: skyblue; }
+address { font-style: normal; }
+
+		
+header { background: white; height: 70px;}
+nav {
+	float: right;
+	margin-right: 20px;
+}
+nav > li {
+    display: inline-block;
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    background-color: skyblue;
+    border-radius: 3px;
+    box-shadow: 2px 2px gray;
+    font-size: 14px;
+    margin: 20px 0;
+}
+nav > li > a {
+    color: dodgerblue;
+    font-weight: bold;
+}
+
+
+#sectionForIndex {
+   	background: white;
+    padding-bottom: 30px;
+    margin-bottom: 20px;
+}
+#sectionForIndex > h2 {
+	padding-top: 30px;
+}
+#sectionForIndex > div {
+    font-size: 13px;
+}
+#sectionForIndex > div:nth-of-type(1), #sectionForIndex > div:nth-of-type(2) {
+    font-size: 1.3em;
+    display: inline-block;
+    width: 120px;
+    height: 120px;
+    line-height: 120px;
+    background-color: skyblue;
+    border-radius: 3px;
+    box-shadow: 3px 3px gray;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+#sectionForIndex a {
+    color: white;
+}
+
+
+#sectionForAboutme {
+	background: white;
+	text-align: left;
+    padding: 30px 10%;
+    margin: 20px 0;
+}
+
+
+#sectionForPhoto {
+	background: white;
+    padding-bottom: 30px;
+    margin-bottom: 20px;
+}
+#sectionForPhoto div {
+    margin: 30px 0;
+}
+#sectionForPhoto > article:nth-of-type(2) {
+    border-top: 1px solid gray;
+    clear: both;
+}
+#sectionForPhoto img {
+    border: 4px solid gray;
+    margin-left: 100px;
+}
+.photoImg { float: left; }
+.photoContent {
+	text-align: left; 
+	padding-left: 500px;
+	padding-right: 100px;
+}
+
+
+footer { 
+	background: white; 
+	margin-bottom: 20px;
+	padding-top: 19px;
+	height: 70px;
+}
+footer > div > a { color: gray; }

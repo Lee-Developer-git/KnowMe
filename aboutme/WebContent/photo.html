@@ -2,103 +2,58 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <style>
-            * { text-align: center; }
-            a { text-decoration: none; }
-            li { list-style: none; }
-
-            nav {
-                float: right;
-            }
-            nav > li {
-                display: inline-block;
-                width: 100px;
-                height: 30px;
-                line-height: 30px;
-                background-color: skyblue;
-                border-radius: 3px;
-                box-shadow: 2px 2px gray;
-                font-size: 14px;
-                margin-bottom: 20px;
-            }
-            nav > li > a {
-                color: dodgerblue;
-                font-weight: bold;
-            }
-
-            section {
-                clear: both;
-                border-top: 7px solid Gainsboro;
-                border-bottom: 7px solid Gainsboro;
-
-                padding-bottom: 30px;
-                margin-bottom: 20px;
-            }
-            section div {
-                margin: 30px 0;
-            }
-            section > div:nth-of-type(2) {
-                border-top: 1px solid black;
-                clear: both;
-            }
-            img {
-                border: 4px solid gray;
-                margin-left: 200px;
-            }
-            
-            footer > div > a {
-                color: gray;
-            }
-        </style>
+        <link rel= "stylesheet" type="text/css" href="style.css">
     </head>
     <body>
         <header>
-            <nav>
-                <li>                
-                    <a href="index.html">홈</a>
-                </li>
-                <li>
-                    <a href="aboutme.html">자기소개</a>
-                </li>
-                <li>
-                    <a href="photo.html">내사진</a>
-                </li>
-                <li>
-                    <a href="today">몇시에요?</a>
-                </li>
-            </nav>
-        </header>
-        <section>
-            <div>
-                <div style="float: left;">
+	        <nav>
+	            <li>                
+	                <a href="index.html">홈</a>
+	            </li>
+	            <li>
+	                <a href="aboutme.html">자기소개</a>
+	            </li>
+	            <li>
+	                <a href="photo.html">내사진</a>
+	            </li>
+	            <li>
+	                <a href="today">몇시에요?</a>
+	            </li>
+	        </nav>
+	    </header>
+        
+        <section id="sectionForPhoto">
+            <article>
+                <div class="photoImg">
                     <img src="https://placehold.it/300x300">
                 </div>
                 <div>
-                    <div style="text-align: left; margin-left: 600px;">
+                    <p class="photoContent" style="padding-top: 30px;">
                         2020.1.1
-                    </div>
-                    <div style="text-align: left; margin-left: 600px;">
+                    </p>
+                    <p class="photoContent">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus cum sint harum quod cupiditate
-                    </div>
+                    </p>
                 </div>
-            </div>
-            <div>
-                <div style="float: left;">
+            </article>
+            <article>
+                <div class="photoImg">
                     <img src="https://placehold.it/300x300">
                 </div>
                 <div style="height: 300px;">
-                    <div style="text-align: left; margin-left: 600px;">
+                    <p class="photoContent">
                         2020.1.1
-                    </div>
-                    <div style="text-align: left; margin-left: 600px;">
+                    </p>
+                    <p class="photoContent">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus cum sint harum quod cupiditate
-                    </div>
+                    </p>
                 </div>
-            </div>
+            </article>
         </section>
+        
         <footer>
-            <div><a href="addrforme@gmail.com">addrforme@gmail.com</a></div>
-            <div><a href="https://github.com/Yun-Jehyeok">https://github.com/Yun-Jehyeok</a></div>
-        </footer>
+	        <address><a href="https://github.com/BoostCourseWebProgramming">https://github.com/BoostCourseWebProgramming</a></address>
+	        <address><a href="https://github.com/BoostCourseWebProgramming">https://github.com/BoostCourseWebProgramming</a></address>
+	    </footer>
     </body>
 </html>
