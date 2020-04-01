@@ -1,0 +1,88 @@
+.sectionLeft {
+	display: inline-block;
+	width: 40%;
+	height: 630px;
+	background-color: #333333;
+}
+
+.sectionLeft > img {
+	width: 80%;
+	float: left; 
+	padding-left: 10%; 
+}
+
+.info {
+	transform: rotate(270deg);
+	color: white;
+	width: 100%;
+	padding-top: 300px;
+	padding-right: 150px;
+}
+
+.info > .name {
+	font-size: 2.5em;
+	font-weight: bold;
+}
+
+.info > div:nth-child(2) {
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
+.info > div:last-child {
+	margin-top: 20px;
+}
+
+.slideName {
+	transform: translateY(-50px);
+	opacity: 0;
+	transition: all 1s;
+	z-index: 100
+}
+
+.is-visible1 {
+	transform: translateY(0);
+	opacity: 1;	
+}
+
+.sectionRight {
+	display: inline-block;
+	float: right;
+	width: 60%;
+	height: 630px;
+}
+
+.selfIntroduce {
+	padding: 10%; 
+	height: 100%;
+}
+
+.selfIntroduce > .intro, .selfIntroduce > .projects {
+	margin-bottom: 35px;
+}
+
+.selfIntroduce > div > div:first-child {
+	font-weight: bold; 
+	font-size: 1.3em;
+	margin-bottom: 20px;
+}
+
+.slideChild {
+	transition: all 1s;
+	opacity: 0;
+	transform: translateY(-50px);
+}
+
+.is-visible2 {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+.selfIntroduce > button {
+	float: right; 
+	margin-top: 50px;
+	font-size: 2.5em;
+	border: 0;
+	background-color: white;
+	color: #333333;
+}
