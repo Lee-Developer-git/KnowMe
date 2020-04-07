@@ -11,7 +11,7 @@
 	margin-top: 100px;
 }
 
-#section > .icon > span > i {
+#section > .icon > span > i, #section > .icon > span > a {
 	color: black; 
 	font-size: 150px; 
 	margin: 0 5%;

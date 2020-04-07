@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Types;
 
 public class UserDAO {
 	private Connection conn = null;
@@ -51,6 +52,10 @@ public class UserDAO {
 			pstmt.setString(1, user.getUserID());
 			pstmt.setString(2, user.getUserPassword());
 			pstmt.setString(3, user.getUserName());
+			pstmt.setNull(4, Types.VARCHAR);
+			pstmt.setNull(5, Types.VARCHAR);
+			pstmt.setNull(6, Types.VARCHAR);
+			
 			return pstmt.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();

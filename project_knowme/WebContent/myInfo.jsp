@@ -1,7 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ page import="java.util.ArrayList" %>
 <%@ page import="user.UserDAO" %>
 <%@ page import="user.User" %>
+<%@ page import="project.ProjectDAO" %>
+<%@ page import="project.Project" %>
 
 <!DOCTYPE html>
 <html>
@@ -23,8 +26,12 @@
 		if(session.getAttribute("userID") != null) {
 			userID = (String) session.getAttribute("userID");
 		}
-		
+				
 		User user = new UserDAO().getUser(userID);
+		
+		ProjectDAO project = new ProjectDAO();
+		
+		ArrayList<Project> list = project.getList(userID);
 	%>
 	<div id="header">
 		<div class="headerLeft">
@@ -37,8 +44,8 @@
 			<div class="menu">
 				<ul class="navbar nav-menu text-right" style="padding-right: 10%;">
 					<li class="menu-item"><a href="moreInfo.jsp"><i><u>About</u></i></a></li>
-					<li class="menu-item"><a href=""><i><u>Members</u></i></a></li>
-					<li class="menu-item"><a href=""><i><u>Project</u></i></a></li>
+					<li class="menu-item"><a href="members.jsp"><i><u>Members</u></i></a></li>
+					<li class="menu-item"><a href="projectList.jsp"><i><u>Project</u></i></a></li>
 					<li class="menu-item"><a href="contact.jsp"><i><u>Contact</u></i></a></li>
 				</ul>
 			</div>
@@ -85,16 +92,14 @@
 				
 				<div class="projects">
 					<div class="slideChild">PROJECTS</div>
-					<div class="slideChild">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
-					<div class="slideChild">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
-					<a href="" class="slideChild">...</a>
+					
+					<a href="project.jsp?pageNum=0" class="slideChild projectsA">...</a>
 				</div>
 				
 				<div class="like">
 					<div class="slideChild">LIKED PROJECTS</div>
-					<div class="slideChild">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
-					<div class="slideChild">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
-					<a href="" class="slideChild">...</a>
+					
+					<a href="project.jsp?pageNum=1" class="slideChild likeA">...</a>
 				</div>
 				
 				<button class="slideChild glyphicon glyphicon-pencil text-right" onclick="location.href='update.jsp'"></button>
@@ -104,6 +109,50 @@
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script src="js/bootstrap.bundle.js"></script>
+	<script>
+	$(document).ready(function() {
+		if(<%= list.size() %> == 1) {
+			var jspContent = "<%= list.get(0).getProjectName() %>";		
+			
+			var content = $('<div class="slideChild">' + jspContent + '</div>');
+			$('.projectsA').before(content);
+		}
+		
+		else if(<%= list.size() %> >= 2) {
+			var jspContent1 = "<%= list.get(0).getProjectName() %>";		
+			var jspContent2 = "<%= list.get(1).getProjectName() %>";		
+
+			var content = $('<div class="slideChild">' + jspContent1 + '</div>');
+			$('.projectsA').before(content);
+			
+			var content = $('<div class="slideChild">' + jspContent2 + '</div>');
+			$('.projectsA').before(content);
+		}
+	});
+	</script>
+	
+	<script>
+	$(document).ready(function() {
+		if(<%= list.size() %> == 1) {
+			var jspContent = "<%= list.get(0).getProjectName() %>";		
+			
+			var content = $('<div class="slideChild">' + jspContent + '</div>');
+			$('.likeA').before(content);
+		}
+		
+		else if(<%= list.size() %> >= 2) {
+			var jspContent1 = "<%= list.get(0).getProjectName() %>";		
+			var jspContent2 = "<%= list.get(1).getProjectName() %>";		
+
+			var content = $('<div class="slideChild">' + jspContent1 + '</div>');
+			$('.likeA').before(content);
+			
+			var content = $('<div class="slideChild">' + jspContent2 + '</div>');
+			$('.likeA').before(content);
+		}
+	});
+	</script>
+	
 	<script>
 	$(document).ready(function() {
 		var slideElements = $('.slideChild');

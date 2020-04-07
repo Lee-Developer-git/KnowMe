@@ -32,6 +32,12 @@
 	opacity: 1;
 	transform: translateY(0);
 }
+
+#section > .icon > span > a {
+	color: black; 
+	font-size: 150px; 
+	margin: 0 5%;
+}
 </style>
 <title>KnowMe</title>
 </head>
@@ -53,8 +59,8 @@
 			<div class="menu">
 				<ul class="navbar nav-menu text-right" style="padding-right: 10%;">
 					<li class="menu-item"><a href="moreInfo.jsp"><i><u>About</u></i></a></li>
-					<li class="menu-item"><a href=""><i><u>Members</u></i></a></li>
-					<li class="menu-item"><a href=""><i><u>Project</u></i></a></li>
+					<li class="menu-item"><a href="members.jsp"><i><u>Members</u></i></a></li>
+					<li class="menu-item"><a href="projectList.jsp"><i><u>Project</u></i></a></li>
 					<li class="menu-item"><a href="contact.jsp"><i><u>Contact</u></i></a></li>
 				</ul>
 			</div>
@@ -84,9 +90,8 @@
 	<div id="section" class="text-center">
 		<div class="slideName">함께 걸어가고 싶다면</div>
 		<div class="icon">
-			<span class="slideChild"><i class="fab fa-github" style="color: white;"></i></span>
-			<span class="slideChild"><i class="fab fa-facebook" style="color: white;"></i></span>
-			<span class="slideChild"><i class="fas fa-envelope" style="color: white;"></i></span>
+			<span class="slideChild"><a href="https://www.facebook.com/profile.php?id=100004529168789" target="_blank"><i class="fab fa-facebook" style="color: white;"></i></a></span>
+			<span class="slideChild"><a href="https://mail.google.com/mail/u/0/#inbox?compose=new" style="color: white;"><i class="fas fa-envelope" style="color: white;"></i></a></span>
 		</div>
 	</div>
 	

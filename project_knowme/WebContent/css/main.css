@@ -29,7 +29,7 @@
 	line-height: 40px;
 }
 
-.slideChild {
+.slideChild, .slide {
 	transition: all 1s;
 	opacity: 0;
 	transform: translateY(-50px);

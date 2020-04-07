@@ -1,0 +1,11 @@
+#section *{
+	font-family: 'BenchNine', Arial, sans-serif;
+}
+
+.table, th, td{
+	border: none;
+}
+
+.table > tbody > tr > td > label{
+	font-size: 1.2em;
+}

@@ -3,6 +3,8 @@
 <%@ page import="java.io.PrintWriter" %>
 <%@ page import="user.UserDAO" %>
 <%@ page import="user.User" %>
+<%@ page import="project.ProjectDAO" %>
+<%@ page import="project.Project" %>
 
 <!DOCTYPE html>
 <html>
@@ -124,9 +126,9 @@ li {
 		<div class="headerRight">
 			<div class="menu">
 				<ul class="navbar nav-menu text-right" style="padding-right: 10%;">
-					<li class="menu-item"><a href="#info"><i><u>About</u></i></a></li>
-					<li class="menu-item"><a href=""><i><u>Members</u></i></a></li>
-					<li class="menu-item"><a href=""><i><u>Project</u></i></a></li>
+					<li class="menu-item"><a href="moreInfo.jsp"><i><u>About</u></i></a></li>
+					<li class="menu-item"><a href="members.jsp"><i><u>Members</u></i></a></li>
+					<li class="menu-item"><a href="projectList.jsp"><i><u>Project</u></i></a></li>
 					<li class="menu-item"><a href="contact.jsp"><i><u>Contact</u></i></a></li>
 				</ul>
 			</div>

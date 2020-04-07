@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<htseml>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width", initial-scale="1">
@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="css/basicSettings.css?after" type="text/css">
 <link rel="stylesheet" href="css/main.css?after" type="text/css">
 <style>
-.slideChild {
+.slide {
 	transition: all 1s;
 	opacity: 0;
 	transform: translateY(-50px);
@@ -48,8 +48,8 @@
 			<div class="menu">
 				<ul class="navbar nav-menu text-right" style="padding-right: 10%;">
 					<li class="menu-item"><a href="moreInfo.jsp"><i><u>About</u></i></a></li>
-					<li class="menu-item"><a href=""><i><u>Members</u></i></a></li>
-					<li class="menu-item"><a href=""><i><u>Project</u></i></a></li>
+					<li class="menu-item"><a href="members.jsp"><i><u>Members</u></i></a></li>
+					<li class="menu-item"><a href="projectList.jsp"><i><u>Project</u></i></a></li>
 					<li class="menu-item"><a href="contact.jsp"><i><u>Contact</u></i></a></li>
 				</ul>
 			</div>
@@ -76,11 +76,15 @@
 			
 			<div class="welcome">
 				<p class="slideChild">Welcome<p><br>
-				<p class="slideChild">
+				<p class="slideChild" style="margin-bottom: 22px;">
 					<i>Welcome to Know -me</i>
 				</p>
 				<p class="slideChild">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis molestie est. Morbi bibendum nulla eget consectetur placerat. Cras dui neque, euismod ut pharetra ac, laoreet ac elit. Quisque elit libero, accumsan a placerat ac, dignissim tincidunt urna. Ut eget eros libero. In commodo ullamcorper luctus. Vivamus eu eros volutpat, convallis ligula imperdiet, dapibus justo.
+					<b>Know -me</b>는 "자기 자신을 알자"라는 취지에서 시작되었습니다.
+					<br>
+					저희는 여러 프로젝트를 진행하고 업로드 할 것이며 반드시
+					<br><br>
+					<b style="font-size: 1.3em;">성공할겁니다.</b>
 				</p>
 				<br>
 				<div class="text-center slideChild">
@@ -97,8 +101,18 @@
 				<div style="margin-top: -30px;">&nbsp&nbsp&nbsp&nbsp-me?</div>
 			</div>
 			<div class="infoRight">
-				<div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis molestie est. Morbi bibendum nulla eget consectetur placerat. Cras dui neque, euismod ut pharetra ac, laoreet ac elit. Quisque elit libero, accumsan a placerat ac.</div>
-				<div class="text-center">
+				<div>
+					<span class="slide">여러분은 자신에 대해 잘 알고 계신가요</span>
+					<br>
+					<span class="slide">혹시 나에 대해 잘 안다고 착각하고 계시진 않은가요</span>
+					<br>
+					<span class="slide">어제의 내가 기억이 나지 않는다면, 나에 대해 잘 모르는 겁니다</span>
+					<br>
+					<span class="slide">프로젝트를 업로드 하고, 훗날 과거를 돌이켜 보세요</span>
+					<br>
+					<span class="slide">당신에게 멋진 과거를 선물해드리겠습니다</span>
+				</div>
+				<div class="text-center slide">
 				<a href="moreInfo.jsp" style="color: white;">Show More+</a></div>
 			</div>
 		</div>
@@ -119,7 +133,7 @@
 	<div id="footer">
 		<div class="footerLeft">
 			<span>Know -me</span> 
-			<span>Copyright ⓒ ⓒKnowMe Since 2020. All rights reserved.</span>
+			<span>Copyright ⓒ KnowMe Since 2020. All rights reserved.</span>
 		</div>
 		
 		<div class="footerRight">
@@ -149,6 +163,37 @@
 	});
 	</script>
 
+	<script>
+	var isVisible = false;
+
+	$(window).on('scroll',function() {
+		var slideElements = $('.slide');
+		
+		function animateSlide() {
+			slideElements.each(function (i) {
+				setTimeout(function() {
+					slideElements.eq(i).addClass('is-visible');
+				}, 500 * (i + 1));
+			});
+		}
+		
+	    if (checkVisible($('.process'))&&!isVisible) {
+	        animateSlide();
+	        isVisible = true;
+	    }
+	});
+
+	function checkVisible( elm, eval ) {
+	    eval = eval || "object visible";
+	    var viewportHeight = $(window).height(), // Viewport Height
+	        scrolltop = $(window).scrollTop(), // Scroll Top
+	        y = $('.process').offset().top,
+	        elementHeight = $('.process').height();   
+	    
+	    if (eval == "object visible") return ((y < (viewportHeight + scrolltop)) && (y > (scrolltop - elementHeight)));
+	    if (eval == "above") return ((y < (viewportHeight + scrolltop)));
+	}
+	</script>
 	<!-- <script>
 		$(document).ready(function(){
 	    	$("#header").on('mousewheel',function(e){ 
