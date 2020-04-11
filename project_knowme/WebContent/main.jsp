@@ -13,6 +13,10 @@
 <link rel="stylesheet" href="css/basicSettings.css?after" type="text/css">
 <link rel="stylesheet" href="css/main.css?after" type="text/css">
 <style>
+body {
+	min-width: 1300px;	
+}
+
 .slide {
 	transition: all 1s;
 	opacity: 0;

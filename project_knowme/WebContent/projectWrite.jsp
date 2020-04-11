@@ -18,7 +18,7 @@
 <link href="https://fonts.googleapis.com/css?family=Merriweather&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/writeupdate.css?after" type="text/css">
 
-<title>Insert title here</title>
+<title>Know Me</title>
 
 <style>
 @import url(https://fonts.googleapis.com/css?family=Raleway);
@@ -175,10 +175,10 @@ li {
 							</tr>
 							<tr>
 								<td>
-									<label>특징</label>
+									<label>Setting</label>
 								</td>
 								<td>
-									<textarea class="form-control" placeholder="특징을 입력해주세요!" name="projectSettings" maxlength="100" style="height: 70px;"></textarea>
+									<textarea class="form-control" placeholder="개발환경을 입력해주세요!" name="projectSettings" maxlength="100" style="height: 70px;"></textarea>
 								</td>
 							</tr>
 							<tr>

@@ -8,8 +8,6 @@ public class Project {
 	private String projectSettings;
 	private String projectName;
 	
-	private int pageNum;
-	
 	public int getProjectID() {
 		return projectID;
 	}

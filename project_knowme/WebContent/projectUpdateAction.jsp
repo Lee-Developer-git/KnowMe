@@ -23,31 +23,30 @@
 			script.println("location.href = 'login.jsp'");
 			script.println("</script>");
 		}
-		
+
 		int projectID = 0;
-		if(request.getParameter("projectID") != null) {
+		if (request.getParameter("projectID") != null) {
 			projectID = Integer.parseInt(request.getParameter("projectID"));
 		}
 		if (projectID == 0) {
 			PrintWriter script = response.getWriter();
-			System.out.println("projectID :"+projectID);
+			System.out.println("projectID :" + projectID);
 			script.println("<script>");
 			script.println("alert('유효하지 않은 프로젝트입니다.')");
 			script.println("location.href = 'projectList.jsp'");
 			script.println("</script>");
 		} else {
 			ProjectDAO projectDAO = new ProjectDAO();
-			int result = projectDAO.update(request.getParameter("projectIntro"),
-					request.getParameter("projectGithub"), request.getParameter("projectSettings"),
-					request.getParameter("projectName"), projectID);
+			Project project = new ProjectDAO().getProject(projectID);
+
+			int result = projectDAO.update(request.getParameter("projectIntro"), request.getParameter("projectGithub"),request.getParameter("projectSettings"),request.getParameter("projectName"), projectID);
 			if (result == -1) {
 				PrintWriter script = response.getWriter();
 				script.println("<script>");
 				script.println("alert('정보 수정에 실패했습니다.')");
 				script.println("history.back()");
 				script.println("</script>");
-			}
-			else {
+			} else {
 				PrintWriter script = response.getWriter();
 				script.println("<script>");
 				script.println("alert('수정을 완료했습니다.')");

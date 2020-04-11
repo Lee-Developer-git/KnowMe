@@ -33,6 +33,9 @@
 * {
 	font-family: 'Merriweather', 'Noto Sans KR';
 }
+body {
+	min-width: 1300px;	
+}
 .headerLeft {
 	background-color: white;
 }
@@ -42,19 +45,11 @@
 #section, #wrap {
 	width: 100%;
 }
+
 #section {
-	height: 800px;
+	height: 1200px;
 }
-.section-header {
-	padding-top: 110px;
-	display: inline-block;
-	width: 25%;
-	height: 800px;
-	border-left: 1.5px solid #c0c0c0;
-	float: left;
-	position: relative;
-}
-.project_name, #section-main {
+.project_name, .icon{
 	margin-left: 170px;
 }
 #detail2 {
@@ -64,23 +59,44 @@ strong:nth-last-child(1) {
 	font-size: 1.8em;
 }
 #section-main {
-	width: 900px;
-	height: 230px;
-	padding-top: 0;
+	width: 100%;
+	height: 450px;
+	margin-top: 80px;
+	padding-top: 50px;
 	position: absolute;
-	top: 650px;
 	z-index: 1;
 	transform: translateY(-50px);
+	background: linear-gradient(to bottom,#6E7783 55%,#77AAAD);
+	color: white;
 }
-#section-main, #section-main strong, #section-main p {
+#section-main > strong, #section-main > p {
 	background-color: transparent;
-	padding-left: 30px;
+	padding-left:170px;
 }
 #section-main strong {
 	font-size: 1.7em;
 }
 .detail p, #section-main p {
 	font-size: 1.1em;
+}
+.section-header {
+	padding-top: 17%;
+	display: inline-block;
+	width: 25%;
+	height: 750px;
+	top: 450px;
+	border-left: 1.5px solid #c0c0c0;
+	float: left;
+	position: relative;
+}
+.icon{
+	transform: translateY(180px);
+	height: 500px;
+	width: 1000px;
+	z-index:2;
+}
+.icon>a>i , .icon button{
+	z-index:2;
 }
 .detailBtn {
 	margin-top: 150px;
@@ -164,9 +180,13 @@ strong:nth-last-child(1) {
 	</div>
 
 	<div id="section">
+		<div id="section-main">
+			<strong class="slide" style="font-size: 2em;">OVERVIEW</strong>
+			<p class="slide"><%=project.getProjectIntro()%></p>
+		</div>
 		<div id="wrap" class="text-center">
 			<div class="project_name section-header">
-				<strong class="slide"> PROJECT<br />FEATURE
+				<strong> PROJECT<br />FEATURE
 				</strong>
 			</div>
 			<div id="detail1" class="detail section-header">
@@ -182,17 +202,16 @@ strong:nth-last-child(1) {
 				<p class="slide"><%=project.getUserID()%></p>
 			</div>
 		</div>
-		<div id="section-main">
-			<strong class="slide" style="font-size: 1.7em;">OVERVIEW</strong>
-			<p class="slide"><%=project.getProjectIntro()%></p>
+		<div class="icon text-right">
 			<%
 				if (userID != null) {
 			%>
-			<a id="unlike" class="detailBtn"
-				href="heartSetAction.jsp?projectID=<%=project.getProjectID()%>">
+			<a id="unlike" class="detailBtn" href="heartSetAction.jsp?projectID=<%=project.getProjectID()%>">
 				<i class="far fa-heart"></i>
 			</a>
-			<a id="like" class="detailBtn"><i class="fas fa-heart"></i></a>
+			<a id="like" class="detailBtn" style="display: none;">
+				<i class="fas fa-heart"></i>
+			</a>
 			<button class="detailBtn glyphicon glyphicon-pencil"
 				onclick="location.href='projectUpdate.jsp?projectID=<%=project.getProjectID()%>'"></button>
 			<a class="detailBtn" href="projectDeleteAction.jsp?projectID=<%=project.getProjectID()%>">

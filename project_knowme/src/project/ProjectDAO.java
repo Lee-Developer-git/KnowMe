@@ -95,8 +95,8 @@ public class ProjectDAO {
 		return -1;
 	}
 	
-	public ArrayList<Project> getList(String userID) {
-		String SQL = "SELECT * FROM PROJECT WHERE userID = ?";
+	public ArrayList<Project> getListA(String userID) {
+		String SQL = "SELECT * FROM project WHERE userID = ?";
 		
 		ArrayList<Project> list = new ArrayList<Project>();
 		
@@ -125,16 +125,46 @@ public class ProjectDAO {
 		return list;
 	}
 	
-	public int write(String userID, String projectOverview, String projectGithub, String projectSettings,
+	public ArrayList<Project> getListB() {
+		String SQL = "SELECT * FROM project WHERE projectID < ? ORDER BY DESC";
+		
+		ArrayList<Project> list = new ArrayList<Project>();
+		
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(SQL);
+			
+			pstmt.setInt(1, getNext());
+			rs = pstmt.executeQuery();
+		
+			while (rs.next()) {
+				Project project = new Project();
+				
+				project.setProjectID(rs.getInt(1));
+				project.setUserID(rs.getString(2));
+				project.setProjectIntro(rs.getString(3));
+				project.setProjectGithub(rs.getString(4));
+				project.setProjectSettings(rs.getString(5));
+				project.setProjectName(rs.getString(6));
+				
+				list.add(project);
+			}
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		return list;
+	}
+	
+	public int write(String userID, String projectIntro, String projectGithub, String projectSettings,
 			String projectName) {
 		String SQL = "INSERT INTO project VALUES (?, ?, ?, ?, ?, ?)";
 
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(SQL);
-
+			
 			pstmt.setInt(1, getNext());
 			pstmt.setString(2, userID);
-			pstmt.setString(3, projectOverview);
+			pstmt.setString(3, projectIntro);
 			pstmt.setString(4, projectGithub);
 			pstmt.setString(5, projectSettings);
 			pstmt.setString(6, projectName);
@@ -147,14 +177,14 @@ public class ProjectDAO {
 		return -1;
 	}
 
-	public int update(String projectOverview, String projectGithub, String projectSettings, String projectName,
-			int projectID) {
-		String SQL = "UPDATE project SET projectOverview = ?, projectGithub = ?, projectSettings = ?, projectName = ? WHERE projectID = ?";
+	public int update(String projectIntro, String projectGithub, String projectSettings,
+			String projectName, int projectID) {
+		String SQL = "UPDATE project SET projectIntro = ?, projectGithub = ?, projectSettings = ?, projectName = ? WHERE projectID = ?";
 
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(SQL);
 
-			pstmt.setString(1, projectOverview);
+			pstmt.setString(1, projectIntro);
 			pstmt.setString(2, projectGithub);
 			pstmt.setString(3, projectSettings);
 			pstmt.setString(4, projectName);
