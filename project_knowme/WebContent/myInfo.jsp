@@ -31,7 +31,7 @@
 		
 		ProjectDAO project = new ProjectDAO();
 		
-		ArrayList<Project> list = project.getList(userID);
+		ArrayList<Project> list = project.getListA(userID);
 	%>
 	<div id="header">
 		<div class="headerLeft">

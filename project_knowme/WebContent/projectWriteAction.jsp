@@ -40,7 +40,8 @@
 				script.println("</script>");
 			} else {
 				ProjectDAO projectDAO = new ProjectDAO();
-				int result = projectDAO.write(project.getUserID(), project.getProjectIntro(),
+				
+				int result = projectDAO.write(userID, project.getProjectIntro(),
 						project.getProjectGithub(), project.getProjectSettings(), project.getProjectName());
 				if (result == -1) {
 					PrintWriter script = response.getWriter();
